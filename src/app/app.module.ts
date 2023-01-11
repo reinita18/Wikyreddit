@@ -4,6 +4,8 @@ import {HttpClientModule} from "@angular/common/http"
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
 import { AppRoutingModule } from './app-routing.module';
 import { CookieService } from 'ngx-cookie-service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 //Componentes
 import { AppComponent } from './app.component';
 import { CreatePostComponent } from './create-post/create-post.component';
@@ -52,6 +54,7 @@ import { CategoryComponent } from './category/category.component';
     ReactiveFormsModule,
   ],
   providers:[
+    {provide:LocationStrategy,useClass:HashLocationStrategy},
     PostsService,
     CookieService
   ],
