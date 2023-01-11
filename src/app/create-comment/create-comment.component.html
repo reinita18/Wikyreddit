@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="container">
+    <div class="comment">
+        <p>Escribe un comentario</p>
+        <textarea name="comentario" [(ngModel)]="comment.comentario" placeholder="Escribe tu comentario."></textarea>
+        <button (click)="createComment()" routerLink="/mainpage">Comentar</button>
+      </div>
+  </div>

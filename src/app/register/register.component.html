@@ -1,0 +1,17 @@
+<app-header-main-page></app-header-main-page>
+<form>
+    <h2>Registrarse</h2>
+    <br>
+    <p>Nombre de usuario:</p>
+    <input name="nick_name" [(ngModel)]="user.nick_name" type="text" placeholder="Nombre de usuario" required pattern ="[a-zA-Z0-9]{5,100}"><br/>
+    <p >Correo:</p>
+    <input name="email" [(ngModel)]="user.email" type="email" placeholder="Correo"><br/> 
+    <p >Contraseña:</p>
+    <input name="contrasena" [(ngModel)]="user.contrasena" type="password" placeholder="Contraseña" required pattern = "(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,18}"><br/>          
+    <p>Confirmar contraseña:</p>
+    <input type="password" name="confirmar" [(ngModel)]="user.nombre_s" placeholder="Contraseña" required pattern = "(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,18}"><br/>
+    <br>
+    <br>
+    <a routerLink="/login">¿Ya eres usuario? Inicia Sesión</a>
+    <button (click)="registerUser()" type="submit" >Registrarme</button>
+</form>

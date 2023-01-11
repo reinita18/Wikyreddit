@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="container">
+    <div class="containerPost" *ngFor=" let searchedPost of searchedPosts" (click)="viewPost(searchedPost.id_post)">
+        <div class="user-time" >
+            <p >Publicado el {{searchedPost.fecha | date:"dd-MM-yy"}} a las {{searchedPost.fecha | date:"hh:mm"}}</p>
+        </div>
+        <div class="body">
+            <h2 class="post-title" >{{searchedPost.titulo}}</h2>
+            <p class="post-text">{{searchedPost.descripcion}}</p>
+            <img class="image" src="{{searchedPost.imagen_es}}" alt="Imágen de publicación">
+        </div>
+        <br>
+        <hr />
+        <div class="btn-list">
+            <button routerLink="/createcomment" >Comentar</button>
+        </div>
+    </div>
+    <div class="comment" *ngFor=" let comment of comments">
+        <div class="user-time">
+        <p>Comentado por <a routerLink="/profile">{{comment.id_usuario}}</a></p>
+        </div>
+        <p class="comment-text">{{comment.comentario}}</p>
+    </div>
+</div>

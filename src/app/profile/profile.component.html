@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="white">
+  <div class="header" *ngFor=" let user of users">
+    <div class="logo" >
+      
+  </div >
+  <p class="username">{{user.nick_name}}</p>
+  </div>
+</div>
+  
+<div class="mytabs">
+  <input type="radio" id="tabpublications" name="mytabs" checked="checked" >
+  <label for="tabpublications">Publicaciones</label>
+  <div class="tab">
+    <div class="containerPost" *ngFor=" let post of posts" (click)="viewPost(post.id_post)">
+      <div class="user-time" >
+          <p >Publicado el {{post.fecha | date:"dd-MM-yy"}} a las {{post.fecha | date:"hh:mm"}}</p>
+      </div>
+      <div class="body">
+          <h2 class="post-title" >{{post.titulo}}</h2>
+          <p class="post-text">{{post.descripcion}}</p>
+          <img class="image" src={{post.imagen_es}} alt="Imágen de publicación">
+      </div>
+  </div>
+  </div>
+  
+  <input type="radio" id="tabcomments" name="mytabs" (click)="viewComments()">
+  <label for="tabcomments">Comentarios</label>
+  <div class="tab">
+    <div class="comment" *ngFor=" let comment of comments" (click)="viewPost(comment.id_post)">
+      <div class="user-time">
+      </div>
+      <p class="comment-text">{{comment.comentario}}</p>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <div class="containerPost" *ngFor=" let post of posts">
+        <div class="user-time" >
+            <p >Publicado el {{post.fecha | date:"dd-MM-yy"}} a las {{post.fecha | date:"hh:mm"}}</p>
+        </div>
+        <div class="body">
+            <h2 class="post-title" >{{post.titulo}}</h2>
+            <p class="post-text">{{post.descripcion}}</p>
+            <img class="image" src={{post.imagen_es}} alt="Imágen de publicación">
+        </div>
+        <br>
+        <hr />
+        <div class="btn-list">
+            <button routerLink="/createcomment">Comentar</button>
+            <button><img src="../../assets/heart-icon.png" height ="20" width="20"/>{{post.valoracion}}</button>
+        </div>
+    </div>
+    
+    <div class="comment" *ngFor=" let comment of comments">
+        <div class="user-time">
+        
+        </div>
+        <p class="comment-text">{{comment.comentario}}</p>
+    </div>
+
+</div>

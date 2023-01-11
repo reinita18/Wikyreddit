@@ -1,0 +1,33 @@
+<header>
+    <a  href="/mainpage" class="logo">
+        <img src="../../assets/Homeworkify3.png" alt="Homeworkify">
+        <h2>Homeworkify</h2>
+    </a>
+    <form>
+        <input type="search" name="cuerpo" [(ngModel)]="busqueda.cuerpo" placeholder="Buscar" aria-label="Search">
+        <button type="button" class="btn-search" routerLink="/searchedpost" (click)="buscar()"  >Buscar</button>
+    </form>
+    <form>
+        <select name="categoria" [(ngModel)]="categories.category" (click)="buscarCategoria()" placeholder="Categorías">
+            <option selected >Seleccione una categoría</option>
+            <option>Arte</option>
+            <option>Economía</option>
+            <option>Educación</option>
+            <option>Geografía</option>
+            <option>Ingeniería</option>
+            <option>Inglés</option>
+            <option>Literatura</option>
+            <option>Medicina</option>
+            <option>Programación</option>
+            <option>Psicología</option>
+            <option>Tecnología</option>
+            <option>Otros</option>
+          </select>
+
+        <button class="btn-post" routerLink="/createpost">Publicar</button>
+        <button class="btn-post" routerLink="/profile" >Perfil</button>
+        <button class="btn-post" routerLink="/" (click)="deleteLS()">Salir</button>
+    </form>
+    
+    
+</header>

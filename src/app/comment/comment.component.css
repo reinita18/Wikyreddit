@@ -1,0 +1,18 @@
+.comment{    
+    --post-line-color: #ccc;
+    border: 1px solid #ccc;
+    margin:10px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+}
+p{
+    width: 80%;
+    margin: auto;
+}
+img{
+    height: 64px;
+    width: 64px;
+    border-radius: 100px;
+}

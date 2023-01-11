@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+      <div class="create-post-container col-md-9">
+        <form class="post-form">
+          <div class="form-group">
+            <div class="create-post-heading">Crear una publicación</div>
+            <hr />
+            <input type="text" name="titulo" [(ngModel)]="post.titulo"class="form-control" style="margin-top: 5px" placeholder="Titulo">
+            <textarea placeholder="Texto" name="descripcion" [(ngModel)]="post.descripcion">Imágen</textarea>
+            <input name="imagen_es" [(ngModel)]="post.imagen_es" name="imagen" />
+            <input type="text"  name="etiquetas" [(ngModel)]="post.etiquetas" class="form-control" style="margin-top: 5px" placeholder="Etiqueta">
+            <!--<input type="text"  name="categoria" [(ngModel)]="post.categoria" class="form-control" style="margin-top: 5px" placeholder="Categoría">-->
+            <select name="categoria" [(ngModel)]="post.categoria" >
+              <option selected >Seleccione una categoría</option>
+              <option>Artes</option>
+              <option>Economía</option>
+              <option>Educación</option>
+              <option>Geografía</option>
+              <option>Ingeniería</option>
+              <option>Inglés</option>
+              <option>Literatura</option>
+              <option>Medicina</option>
+              <option>Programación</option>
+              <option>Psicología</option>
+              <option>Tecnología</option>
+              <option>Otros</option>
+            </select>
+            <span>
+              <div class="float-right">
+                <button class="btnCreatePost" routerLink="/mainpage" (click)="createPost()">Publicar</button>
+              </div>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
