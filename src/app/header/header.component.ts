@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
       
     }
     else{
-      window.location.reload()
+      //window.location.reload()
       console.log("cuerpo busqueda")
       console.log(this.busqueda.cuerpo)
       localStorage.setItem("searchData",this.busqueda.cuerpo)
