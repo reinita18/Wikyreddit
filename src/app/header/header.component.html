@@ -8,8 +8,9 @@
         <button type="button" class="btn-search" routerLink="/searchedpost" (click)="buscar()"  >Buscar</button>
     </form>
     <form>
+        <button class="btn-category">Categorias: </button>
         <select name="categoria" [(ngModel)]="categories.category" (click)="buscarCategoria()" placeholder="Categorías">
-            <option selected >Seleccione una categoría</option>
+            <option selected disabled>Seleccione una categoría</option>
             <option>Artes</option>
             <option>Economía</option>
             <option>Educación</option>

@@ -13,6 +13,9 @@ header{
     top: 0;   
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+.cateogry{
+    display: flex;
+}
 a{
     text-decoration: none;
     color: black;
@@ -60,6 +63,17 @@ input{
     padding: 10px 20px 10px 20px;
     margin: 0px 5px 0px 5px;
 }
+.btn-category{
+    background-color: #FFFFFF;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: 0;
+    color:black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14;
+    margin-left: 0px;
+    padding: 10px 5px 10px 5px;
+}
 .btn-post:hover{
     opacity: 0.6;
     
@@ -72,15 +86,9 @@ background-color: lightblue;
 .btn-search:active{
 background-color: #e9f6ff;
 }
-#menu * { list-style:none;}
-#menu li{ line-height:180%;}
-#menu li a{color:#222; text-decoration:none;}
-#menu li a:before{ content:"\025b8"; color:#ddd; margin-right:4px;}
-#menu input[name="list"] {
-	position: absolute;
-	left: -1000em;
-	}
-#menu label:before{ content:"\025b8"; margin-right:4px;}
-#menu input:checked ~ label:before{ content:"\025be";}
-#menu .interior{display: none;}
-#menu input:checked ~ ul{display:block;}
+
+select{
+    padding: 5px 20px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+  }
