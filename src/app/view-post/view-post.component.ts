@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {HeaderComponent} from "../header/header.component"
 import {PostsService} from "../services/posts.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ViewPostComponent implements OnInit {
   posts: any = [];
   comments: any= [];
   
-  constructor(private postsService:PostsService) { }
+  constructor(private postsService:PostsService,private router:Router) { }
 
   ngOnInit(): void {
     
@@ -36,5 +37,18 @@ export class ViewPostComponent implements OnInit {
     );
   }
   
+  like(id:string){
+    //localStorage.setItem("idPost",id)
+    //console.log(id)
+    this.postsService.likePost(id).subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(["/viewpost"]);
+        window.location.reload()
+        
+      },
+      err => console.error(err)
+    );
+  }
 
 }

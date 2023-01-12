@@ -64,4 +64,18 @@ export class SearchedPostComponent implements OnInit {
     );
   }
 
+  like(id:string){
+    //localStorage.setItem("idPost",id)
+    //console.log(id)
+    this.postsService.likePost(id).subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(["/searchedpost"]);
+        window.location.reload()
+        
+      },
+      err => console.error(err)
+    );
+  }
+
 }

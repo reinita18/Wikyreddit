@@ -44,4 +44,37 @@ export class CategoryComponent implements OnInit {
     );
   }
 
+  viewPost(id:string){
+    localStorage.setItem("idPost",id)
+    this.postsService.getPost(id).subscribe(
+      res => {
+        console.log(res);
+        this.searchedPosts = res;
+      },
+      err => console.log(err)
+    );
+    
+    this.postsService.getPostComments(id).subscribe(
+      res => {
+        console.log(res);
+        this.comments=res;
+      },
+      err => console.error(err)
+    );
+  }
+
+  like(id:string){
+    //localStorage.setItem("idPost",id)
+    //console.log(id)
+    this.postsService.likePost(id).subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(["/cateogry"]);
+        window.location.reload()
+        
+      },
+      err => console.error(err)
+    );
+  }
+
 }
